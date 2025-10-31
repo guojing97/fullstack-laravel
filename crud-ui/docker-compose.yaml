@@ -1,0 +1,12 @@
+services:
+  # Embed UI for submiting contact form from client side
+  client-contact-form:
+    build: .
+    image: client-crud:1.0.0
+    container_name: client-crud
+    restart: on-failure
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_API_BASE_URL=http://host.docker.internal:8000/api
+      - NEXT_PUBLIC_TOKEN_SECRET=zdEDzQfULWLB6fC8w6TbXGS11SYN5PML
